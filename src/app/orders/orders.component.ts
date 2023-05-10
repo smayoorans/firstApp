@@ -1,15 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { DataShareService } from '../data-share.service';
 
 @Component({
   selector: 'app-orders',
-  template: '<h1>Hello Orders</h1>',
+  templateUrl: './orders.component.html',
   styleUrls: ['./orders.component.css']
 })
 export class OrdersComponent implements OnInit {
+  
+  @Input()
+  searchValue = '';
 
-  constructor() { }
+  orderMessage = '';
+
+  constructor(private dataShareService: DataShareService) { }
 
   ngOnInit(): void {
+    this.dataShareService.getMessage().subscribe(d => {
+      this.orderMessage = d;
+    })
   }
 
 }

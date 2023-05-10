@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -8,13 +8,32 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class AppComponent {
 
-  registrationDate = new Date();
-  name = 'hello world'
+  searchField = 0;
+  name = '';
 
-
-  constructor() {
-    
+  onChangeSearchField() {
+    //this.searchField = this.searchField + 1;
+    this.searchField += 1;
+  
   }
+  // constructor() {
+  //   console.log('constructor...1');
+  //   // this.name = 'World'
+  // }
 
+  // ngOnInit() {
+  //   console.log('ng On Init...3');
+  //   //this.name = 'Hello';
+  // }
+
+  // ngOnChanges(changes: SimpleChanges): void {
+  //   console.log('ng on changes...2');
+  // }
+  
+  onChangeValue(event: any) {
+    console.log('App component');
+    console.log(event);
+    this.name = event;
+  }
 
 }

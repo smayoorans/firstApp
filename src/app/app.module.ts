@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
 import { ReversePipe } from './reverse.pipe';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ReversePipe } from './reverse.pipe';
     OrdersComponent,
     NotFoundComponent,
     HomeComponent,
-    ReversePipe
+    ReversePipe,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,

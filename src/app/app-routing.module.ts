@@ -6,7 +6,6 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  
   {
     path: 'customers',
     component: CustomersComponent
@@ -14,15 +13,8 @@ const routes: Routes = [
   {
     path: 'orders',
     component: OrdersComponent
-  },
-  {
-    path: '',
-    component: HomeComponent
-  },
-  {
-    path: '**',
-    component: NotFoundComponent
   }
+  
 ];
 
 @NgModule({
